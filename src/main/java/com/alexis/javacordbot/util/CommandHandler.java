@@ -1,9 +1,10 @@
 package com.alexis.javacordbot.util;
 
-import com.alexis.javacordbot.Constants;
+import com.alexis.javacordbot.*;
 import com.alexis.javacordbot.Embeds;
 import com.alexis.javacordbot.commands.MuteCommand;
 import com.alexis.javacordbot.commands.PingCommand;
+import com.alexis.javacordbot.commands.UnmuteCommand;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
@@ -24,6 +25,7 @@ public class CommandHandler implements MessageCreateListener {
 
         commands.add(new PingCommand());
         commands.add(new MuteCommand());
+        commands.add(new UnmuteCommand());
     }
 
     @Override

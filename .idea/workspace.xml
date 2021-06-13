@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74306925-6452-41db-b57c-0004c4ec7998" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/commands/MuteCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/util/Arguments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/util/Arguments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/untitled.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/UnmuteCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/commands/UnmuteCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/Embeds.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/Embeds.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/CommandHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/CommandHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/Embeds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/Embeds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/util/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/util/CommandHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,12 +40,25 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Javacord-Bot" type="f1a62948:ProjectNode" />
+                <item name="untitled" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="untitled" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="untitled" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -57,7 +86,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1tuIsat3QoiZL0MCQVH010QJxef" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">

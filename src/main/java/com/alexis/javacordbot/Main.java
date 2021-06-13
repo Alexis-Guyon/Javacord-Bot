@@ -20,7 +20,7 @@ public class Main {
 
         DiscordApi api = new DiscordApiBuilder()
                 .setToken(TOKEN)
-                .setAllNonPrivilegedIntents()
+                .setAllIntents()
                 .login().join();
 
         LOGGER.info("The bot is now online!");

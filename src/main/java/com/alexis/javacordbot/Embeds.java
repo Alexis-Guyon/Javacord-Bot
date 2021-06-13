@@ -1,5 +1,6 @@
 package com.alexis.javacordbot;
 
+import com.alexis.javacordbot.util.Constants;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 
 import java.awt.*;
