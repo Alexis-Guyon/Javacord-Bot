@@ -26,20 +26,20 @@ public class UnmuteCommand extends Command {
             }
             if (args.size() > 1) {
                 args.getUser(event.getApi(), 1).ifPresent(targetUser -> {
-                    if (!targetUser.getRoles(server).contains(server.getRolesByName("Muted").get(0))) {
+                    if (targetUser.getRoles(server).contains(server.getRolesByName("Muted").get(0))) {
+                        server.removeRoleFromUser(targetUser, server.getRolesByName("Muted").get(0)).exceptionally(ExceptionLogger.get());
+                        event.getChannel()
+                                .sendMessage(Embeds.defaultEmbed()
+                                        .setTitle("User Unmuted")
+                                        .setDescription("**" + targetUser.getDiscriminatedName() + "** was unmuted."))
+                                .exceptionally(ExceptionLogger.get());
+                    } else {
                         event.getChannel()
                                 .sendMessage(Embeds.errorEmbed()
                                         .setTitle("User is not Muted")
                                         .setDescription("**" + targetUser.getDiscriminatedName() + "** is not muted."))
                                 .exceptionally(ExceptionLogger.get());
-                        return;
                     }
-                    server.removeRoleFromUser(targetUser, server.getRolesByName("Muted").get(0)).exceptionally(ExceptionLogger.get());
-                    event.getChannel()
-                            .sendMessage(Embeds.defaultEmbed()
-                                    .setTitle("User Unmuted")
-                                    .setDescription("**" + targetUser.getDiscriminatedName() + "** was unmuted."))
-                            .exceptionally(ExceptionLogger.get());
                 });
             } else {
                 event.getChannel()
