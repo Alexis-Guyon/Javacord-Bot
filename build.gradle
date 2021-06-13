@@ -1,16 +1,21 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'com.alexis.javacordbot'
+version '1.0'
 
-repositories { mavenCentral()
+repositories {
+    mavenCentral()
 }
 
-dependencies { implementation 'org.javacord:javacord:3.3.0'
+dependencies {
+    implementation 'org.javacord:javacord:3.3.0'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    compile 'com.vdurmont:emoji-java:5.1.1'
 }
 
-test {
-    useJUnitPlatform()
+application {
+    mainClassName = 'com.alexis.javacordbot.Main'
 }

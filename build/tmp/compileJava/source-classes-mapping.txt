@@ -1,6 +1,0 @@
-fr/javabot/main/Main.java
- fr.javabot.main.Main
-fr/javabot/listener/CommandPing.java
- fr.javabot.listener.CommandPing
-fr/javabot/listener/CommandMute.java
- fr.javabot.listener.CommandMute
