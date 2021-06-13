@@ -1,6 +1,10 @@
 package com.alexis.javacordbot.util;
 
+import org.javacord.api.DiscordApi;
+import org.javacord.api.entity.user.User;
+
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Arguments extends ArrayList<String> {
 
@@ -36,6 +40,24 @@ public class Arguments extends ArrayList<String> {
                     isGrouped = true;
                     stringIndex = i + 1;
                 }
+            }
+        }
+    }
+
+    public Optional<User> getUser(DiscordApi api, int index) {
+        String arg = get(index);
+
+        if (arg.startsWith("<@!") && arg.endsWith(">")) {
+            try {
+                return Optional.of(api.getUserById(arg.substring(3, arg.length() - 1)).join());
+            } catch (Exception e) {
+                return Optional.empty();
+            }
+        } else {
+            try {
+                return Optional.of(api.getUserById(arg).join());
+            } catch (Exception e) {
+                return Optional.empty();
             }
         }
     }
