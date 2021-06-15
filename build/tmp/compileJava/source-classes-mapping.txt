@@ -1,16 +1,24 @@
 com/alexis/javacordbot/util/Command.java
  com.alexis.javacordbot.util.Command
-com/alexis/javacordbot/Constants.java
- com.alexis.javacordbot.Constants
-com/alexis/javacordbot/Main.java
- com.alexis.javacordbot.Main
+com/alexis/javacordbot/util/Constants.java
+ com.alexis.javacordbot.util.Constants
+com/alexis/javacordbot/commands/UnmuteCommand.java
+ com.alexis.javacordbot.commands.UnmuteCommand
 com/alexis/javacordbot/commands/PingCommand.java
  com.alexis.javacordbot.commands.PingCommand
+com/alexis/javacordbot/commands/BanCommand.java
+ com.alexis.javacordbot.commands.BanCommand
+com/alexis/javacordbot/Main.java
+ com.alexis.javacordbot.Main
+com/alexis/javacordbot/commands/BanlistCommand.java
+ com.alexis.javacordbot.commands.BanlistCommand
 com/alexis/javacordbot/util/Arguments.java
  com.alexis.javacordbot.util.Arguments
 com/alexis/javacordbot/Embeds.java
  com.alexis.javacordbot.Embeds
-com/alexis/javacordbot/util/CommandHandler.java
- com.alexis.javacordbot.util.CommandHandler
 com/alexis/javacordbot/commands/MuteCommand.java
  com.alexis.javacordbot.commands.MuteCommand
+com/alexis/javacordbot/util/CommandHandler.java
+ com.alexis.javacordbot.util.CommandHandler
+com/alexis/javacordbot/commands/HelpCommand.java
+ com.alexis.javacordbot.commands.HelpCommand
