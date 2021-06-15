@@ -1,0 +1,825 @@
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'java'\r\n}\r\n\r\ngroup 'org.example'\r\nversion '1.0-SNAPSHOT'\r\n\r\nrepositories { mavenCentral()\r\n}\r\n\r\ndependencies { implementation 'org.javacord:javacord:3.3.0'\r\n}\r\n\r\ntest {\r\n    useJUnitPlatform()\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	
++++ b/build.gradle	
+@@ -1,16 +1,21 @@
+ plugins {
+-    id 'java'
++    id 'application'
+ }
+ 
+-group 'org.example'
+-version '1.0-SNAPSHOT'
++group 'com.alexis.javacordbot'
++version '1.0'
+ 
+-repositories { mavenCentral()
++repositories {
++    mavenCentral()
+ }
+ 
+-dependencies { implementation 'org.javacord:javacord:3.3.0'
++dependencies {
++    implementation 'org.javacord:javacord:3.3.0'
++    implementation 'org.slf4j:slf4j-api:1.7.30'
++    implementation 'org.slf4j:slf4j-simple:1.7.30'
++    compile 'com.vdurmont:emoji-java:5.1.1'
+ }
+ 
+-test {
+-    useJUnitPlatform()
++application {
++    mainClassName = 'com.alexis.javacordbot.Main'
+ }
+\ No newline at end of file
+Index: src/main/java/fr/javabot/listener/CommandMute.java
+===================================================================
+diff --git a/src/main/java/fr/javabot/listener/CommandMute.java b/src/main/java/fr/javabot/listener/CommandMute.java
+deleted file mode 100644
+--- a/src/main/java/fr/javabot/listener/CommandMute.java	
++++ /dev/null	
+@@ -1,14 +0,0 @@
+-package fr.javabot.listener;
+-
+-import fr.javabot.main.Main;
+-import org.javacord.api.entity.Mentionable;
+-import org.javacord.api.event.message.MessageCreateEvent;
+-import org.javacord.api.listener.message.MessageCreateListener;
+-
+-public class CommandMute implements MessageCreateListener {
+-
+-    @Override
+-    public void onMessageCreate(MessageCreateEvent event) {
+-
+-    }
+-}
+Index: src/main/java/fr/javabot/listener/CommandPing.java
+===================================================================
+diff --git a/src/main/java/fr/javabot/listener/CommandPing.java b/src/main/java/fr/javabot/listener/CommandPing.java
+deleted file mode 100644
+--- a/src/main/java/fr/javabot/listener/CommandPing.java	
++++ /dev/null	
+@@ -1,14 +0,0 @@
+-package fr.javabot.listener;
+-
+-import org.javacord.api.event.message.MessageCreateEvent;
+-import org.javacord.api.listener.message.MessageCreateListener;
+-import fr.javabot.main.Main;
+-public class CommandPing implements MessageCreateListener {
+-
+-    @Override
+-    public void onMessageCreate(MessageCreateEvent event) {
+-        if(event.getMessageContent().equalsIgnoreCase(Main.prefix + "ping")) {
+-            event.getChannel().sendMessage("pong!");
+-        }
+-    }
+-}
+Index: src/main/java/fr/javabot/main/Main.java
+===================================================================
+diff --git a/src/main/java/fr/javabot/main/Main.java b/src/main/java/fr/javabot/main/Main.java
+deleted file mode 100644
+--- a/src/main/java/fr/javabot/main/Main.java	
++++ /dev/null	
+@@ -1,25 +0,0 @@
+-package fr.javabot.main;
+-
+-import fr.javabot.listener.CommandMute;
+-import fr.javabot.listener.CommandPing;
+-import org.javacord.api.DiscordApi;
+-import org.javacord.api.DiscordApiBuilder;
+-
+-public class Main {
+-    public static String prefix = "$";
+-
+-    public static void main(String[] args) {
+-        DiscordApi api = new DiscordApiBuilder()
+-                .addServerBecomesAvailableListener(event -> {
+-                    System.out.println("Loaded " + event.getServer().getName());
+-                })
+-                // A listener in their own class
+-                .addListener(new CommandPing())
+-                .addListener(new CommandMute())
+-                .setToken("ODUzNjY3MzgzMTcxNjEyNjcy.YMYttA.7SiNIrsCM5d6HrXy4hi3DHSI3KM")
+-                .setWaitForServersOnStartup(false)
+-                .login()
+-                .join();
+-        System.out.println(api.createBotInvite());
+-    }
+-}
+Index: .idea/modules/untitled.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module external.linked.project.id=\"untitled\" external.linked.project.path=\"$MODULE_DIR$/../..\" external.root.project.path=\"$MODULE_DIR$/../..\" external.system.id=\"GRADLE\" type=\"JAVA_MODULE\" version=\"4\" />
+===================================================================
+diff --git a/.idea/modules/untitled.iml b/.idea/modules/untitled.iml
+--- a/.idea/modules/untitled.iml	
++++ b/.idea/modules/untitled.iml	
+@@ -1,2 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<module external.linked.project.id="untitled" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" type="JAVA_MODULE" version="4" />
+\ No newline at end of file
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$/../..">
++      <excludeFolder url="file://$MODULE_DIR$/../../.gradle" />
++      <excludeFolder url="file://$MODULE_DIR$/../../build" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules/untitled.test.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/untitled.test.iml b/.idea/modules/untitled.test.iml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/modules/untitled.test.iml	
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <output-test url="file://$MODULE_DIR$/../../build/classes/java/test" />
++    <exclude-output />
++    <content url="file://$MODULE_DIR$/../../src/test" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="Gradle: com.vdurmont:emoji-java:5.1.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-simple:1.7.30" level="project" />
++    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.30" level="project" />
++    <orderEntry type="library" name="Gradle: org.json:json:20170516" level="project" />
++    <orderEntry type="library" name="Gradle: org.javacord:javacord-api:3.3.0" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.javacord:javacord-core:3.3.0" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.9.1" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.squareup.okhttp3:okhttp:3.9.1" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.3" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.neovisionaries:nv-websocket-client:2.6" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.codahale:xsalsa20poly1305:0.10.1" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.apache.logging.log4j:log4j-api:2.11.0" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: io.vavr:vavr:0.10.1" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.squareup.okio:okio:1.14.0" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.3" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.bouncycastle:bcprov-jdk15on:1.59" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: io.vavr:vavr-match:0.10.1" level="project" />
++  </component>
++  <component name="TestModuleProperties" production-module="untitled.main" />
++</module>
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>distributionBase=GRADLE_USER_HOME\r\ndistributionPath=wrapper/dists\r\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-6.7-bin.zip\r\nzipStoreBase=GRADLE_USER_HOME\r\nzipStorePath=wrapper/dists\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+--- a/gradle/wrapper/gradle-wrapper.properties	
++++ b/gradle/wrapper/gradle-wrapper.properties	
+@@ -1,5 +1,5 @@
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-6.7-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.8-bin.zip
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
+Index: src/main/java/com/alexis/javacordbot/util/Constants.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/util/Constants.java b/src/main/java/com/alexis/javacordbot/util/Constants.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/util/Constants.java	
+@@ -0,0 +1,17 @@
++package com.alexis.javacordbot.util;
++
++import java.awt.*;
++
++public final class Constants {
++
++    /*
++    Bot Prefix
++     */
++    public static final String PREFIX = "$";
++
++    /*
++    Bot Color
++     */
++    public static final Color COLOR = new Color(138,43,226);
++
++}
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	
++++ b/.idea/.name	
+@@ -0,0 +1,1 @@
++Javacord-Bot
+\ No newline at end of file
+Index: src/main/java/com/alexis/javacordbot/util/CommandHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/util/CommandHandler.java b/src/main/java/com/alexis/javacordbot/util/CommandHandler.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/util/CommandHandler.java	
+@@ -0,0 +1,64 @@
++package com.alexis.javacordbot.util;
++
++import com.alexis.javacordbot.*;
++import com.alexis.javacordbot.Embeds;
++import com.alexis.javacordbot.commands.MuteCommand;
++import com.alexis.javacordbot.commands.PingCommand;
++import com.alexis.javacordbot.commands.UnmuteCommand;
++import org.javacord.api.DiscordApi;
++import org.javacord.api.event.message.MessageCreateEvent;
++import org.javacord.api.listener.message.MessageCreateListener;
++import org.javacord.api.util.logging.ExceptionLogger;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class CommandHandler implements MessageCreateListener {
++
++    private final DiscordApi api;
++
++    List<Command> commands = new ArrayList<>();
++
++    public CommandHandler(DiscordApi api) {
++        this.api = api;
++        api.addMessageCreateListener(this);
++
++        commands.add(new PingCommand());
++        commands.add(new MuteCommand());
++        commands.add(new UnmuteCommand());
++    }
++
++    @Override
++    public void onMessageCreate(MessageCreateEvent event) {
++        if (!event.getMessageAuthor().isRegularUser()) {
++            return;
++        }
++
++        String message = event.getMessageContent();
++
++        if (message.startsWith(Constants.PREFIX)) {
++            Arguments args = new Arguments(message.substring(Constants.PREFIX.length()));
++
++            if (args.size() >= 1) {
++                for (Command command : commands) {
++                    if (args.get(0).equals(command.identifier)) {
++                        try {
++                            command.execute(event, args);
++                        } catch (Exception e) {
++                            e.printStackTrace();
++                            api.getOwner().thenAcceptAsync(user -> {
++                                String ownerName = user.getName();
++                                event.getChannel()
++                                        .sendMessage(Embeds.errorEmbed()
++                                                .setTitle("Error")
++                                                .setDescription("Please DM " + ownerName + " if this continues."))
++                                        .exceptionally(ExceptionLogger.get());
++                            }).exceptionally(ExceptionLogger.get());
++                        }
++                    }
++                }
++            }
++        }
++    }
++
++}
+Index: src/main/java/com/alexis/javacordbot/util/Command.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/util/Command.java b/src/main/java/com/alexis/javacordbot/util/Command.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/util/Command.java	
+@@ -0,0 +1,20 @@
++package com.alexis.javacordbot.util;
++
++import org.javacord.api.event.message.MessageCreateEvent;
++
++public abstract class Command {
++
++    public final String identifier;
++    public final String syntax;
++    public final String description;
++
++    public Command(String identifier, String syntax, String description) {
++        this.identifier = identifier;
++        this.syntax = syntax;
++        this.description = description;
++    }
++
++    public abstract void execute(MessageCreateEvent event, Arguments args);
++
++
++}
+Index: src/main/java/com/alexis/javacordbot/commands/UnmuteCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/commands/UnmuteCommand.java b/src/main/java/com/alexis/javacordbot/commands/UnmuteCommand.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/commands/UnmuteCommand.java	
+@@ -0,0 +1,53 @@
++package com.alexis.javacordbot.commands;
++
++import com.alexis.javacordbot.Embeds;
++import com.alexis.javacordbot.util.Arguments;
++import com.alexis.javacordbot.util.Command;
++import org.javacord.api.entity.permission.PermissionType;
++import org.javacord.api.event.message.MessageCreateEvent;
++import org.javacord.api.util.logging.ExceptionLogger;
++
++public class UnmuteCommand extends Command {
++
++    public UnmuteCommand() {
++        super("unmute", "syntax", "description");
++    }
++
++    @Override
++    public void execute(MessageCreateEvent event, Arguments args) {
++        event.getServer().ifPresent(server -> event.getMessageAuthor().asUser().ifPresent(user -> {
++            if (!server.hasPermission(user, PermissionType.MOVE_MEMBERS)) {
++                event.getChannel()
++                        .sendMessage(Embeds.errorEmbed()
++                                .setTitle("Invalid Permissions")
++                                .setDescription("You require the **Move Members** permission."))
++                        .exceptionally(ExceptionLogger.get());
++                return;
++            }
++            if (args.size() > 1) {
++                args.getUser(event.getApi(), 1).ifPresent(targetUser -> {
++                    if (!targetUser.getRoles(server).contains(server.getRolesByName("Muted").get(0))) {
++                        event.getChannel()
++                                .sendMessage(Embeds.errorEmbed()
++                                        .setTitle("User is not Muted")
++                                        .setDescription("**" + targetUser.getDiscriminatedName() + "** is not muted."))
++                                .exceptionally(ExceptionLogger.get());
++                        return;
++                    }
++                    server.removeRoleFromUser(targetUser, server.getRolesByName("Muted").get(0)).exceptionally(ExceptionLogger.get());
++                    event.getChannel()
++                            .sendMessage(Embeds.defaultEmbed()
++                                    .setTitle("User Unmuted")
++                                    .setDescription("**" + targetUser.getDiscriminatedName() + "** was unmuted."))
++                            .exceptionally(ExceptionLogger.get());
++                });
++            } else {
++                event.getChannel()
++                        .sendMessage(Embeds.errorEmbed()
++                                .setTitle("Invalid Syntax")
++                                .setDescription("You need to specify a user."))
++                        .exceptionally(ExceptionLogger.get());
++            }
++        }));
++    }
++}
+Index: src/main/java/com/alexis/javacordbot/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/Main.java b/src/main/java/com/alexis/javacordbot/Main.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/Main.java	
+@@ -0,0 +1,32 @@
++package com.alexis.javacordbot;
++
++import com.alexis.javacordbot.util.CommandHandler;
++import org.javacord.api.DiscordApi;
++import org.javacord.api.DiscordApiBuilder;
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
++
++public class Main {
++
++    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
++
++    public static void main(String[] args) {
++        if (args.length < 1) {
++            LOGGER.info("Please provide a valid token as the first argument!");
++            return;
++        }
++
++        String TOKEN = args[0];
++
++        DiscordApi api = new DiscordApiBuilder()
++                .setToken(TOKEN)
++                .setAllIntents()
++                .login().join();
++
++        LOGGER.info("The bot is now online!");
++        LOGGER.info(api.createBotInvite());
++
++        new CommandHandler(api);
++    }
++
++}
+Index: src/main/java/com/alexis/javacordbot/Embeds.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/Embeds.java b/src/main/java/com/alexis/javacordbot/Embeds.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/Embeds.java	
+@@ -0,0 +1,24 @@
++package com.alexis.javacordbot;
++
++import com.alexis.javacordbot.util.Constants;
++import org.javacord.api.entity.message.embed.EmbedBuilder;
++
++import java.awt.*;
++
++public class Embeds {
++
++    /*
++Default Embed
++ */
++    public static EmbedBuilder defaultEmbed() {
++        return new EmbedBuilder().setColor(Constants.COLOR);
++    }
++
++    /*
++    Error Embed
++     */
++    public static EmbedBuilder errorEmbed() {
++        return new EmbedBuilder().setColor(Color.RED);
++    }
++
++}
+Index: .idea/libraries-with-intellij-classes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries-with-intellij-classes.xml b/.idea/libraries-with-intellij-classes.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/libraries-with-intellij-classes.xml	
+@@ -0,0 +1,65 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="libraries-with-intellij-classes">
++    <option name="intellijApiContainingLibraries">
++      <list>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="ideaIU" />
++          <option name="groupId" value="com.jetbrains.intellij.idea" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="ideaIU" />
++          <option name="groupId" value="com.jetbrains" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="ideaIC" />
++          <option name="groupId" value="com.jetbrains.intellij.idea" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="ideaIC" />
++          <option name="groupId" value="com.jetbrains" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="pycharmPY" />
++          <option name="groupId" value="com.jetbrains.intellij.pycharm" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="pycharmPY" />
++          <option name="groupId" value="com.jetbrains" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="pycharmPC" />
++          <option name="groupId" value="com.jetbrains.intellij.pycharm" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="pycharmPC" />
++          <option name="groupId" value="com.jetbrains" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="clion" />
++          <option name="groupId" value="com.jetbrains.intellij.clion" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="clion" />
++          <option name="groupId" value="com.jetbrains" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="riderRD" />
++          <option name="groupId" value="com.jetbrains.intellij.rider" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="riderRD" />
++          <option name="groupId" value="com.jetbrains" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="goland" />
++          <option name="groupId" value="com.jetbrains.intellij.goland" />
++        </LibraryCoordinatesState>
++        <LibraryCoordinatesState>
++          <option name="artifactId" value="goland" />
++          <option name="groupId" value="com.jetbrains" />
++        </LibraryCoordinatesState>
++      </list>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/java/com/alexis/javacordbot/util/Arguments.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/util/Arguments.java b/src/main/java/com/alexis/javacordbot/util/Arguments.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/util/Arguments.java	
+@@ -0,0 +1,79 @@
++package com.alexis.javacordbot.util;
++
++import org.javacord.api.DiscordApi;
++import org.javacord.api.entity.user.User;
++
++import java.util.ArrayList;
++import java.util.Optional;
++
++public class Arguments extends ArrayList<String> {
++
++    public Arguments(String in) {
++        String out;
++
++        if (in.endsWith(" ")) {
++            out = in;
++        } else {
++            out = in + " ";
++        }
++
++        int stringIndex = 0;
++        int stringEndIndex = 0;
++        boolean isGrouped = false;
++
++        for (int i = 0; i < out.length(); i++) {
++            char c = out.charAt(i);
++
++            if (c == ' ' && !isGrouped) {
++                if (stringEndIndex == 0) {
++                    add(out.substring(stringIndex, i));
++                } else {
++                    add(out.substring(stringIndex, stringEndIndex));
++                    stringEndIndex = 0;
++                }
++                stringIndex = i + 1;
++            } else if (c == '"') {
++                if (isGrouped) {
++                    stringEndIndex = i;
++                    isGrouped = false;
++                } else {
++                    isGrouped = true;
++                    stringIndex = i + 1;
++                }
++            }
++        }
++    }
++
++    public Optional<User> getUser(DiscordApi api, int index) {
++        String arg = get(index);
++
++        if (arg.startsWith("<@!") && arg.endsWith(">")) {
++            try {
++                return Optional.of(api.getUserById(arg.substring(3, arg.length() - 1)).join());
++            } catch (Exception e) {
++                return Optional.empty();
++            }
++        } else {
++            try {
++                return Optional.of(api.getUserById(arg).join());
++            } catch (Exception e) {
++                return Optional.empty();
++            }
++        }
++    }
++
++    public String getTrailing(int index) {
++        StringBuilder sb = new StringBuilder();
++
++        for (int i = index; i < size(); i++) {
++            if (i != index) {
++                sb.append(' ');
++            }
++
++            sb.append(get(i));
++        }
++
++        return sb.toString();
++    }
++
++}
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>rootProject.name = 'untitled'\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle b/settings.gradle
+--- a/settings.gradle	
++++ b/settings.gradle	
+@@ -1,2 +1,2 @@
+-rootProject.name = 'untitled'
++rootProject.name = 'Javacord-Bot'
+ 
+Index: src/main/java/com/alexis/javacordbot/commands/PingCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/commands/PingCommand.java b/src/main/java/com/alexis/javacordbot/commands/PingCommand.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/commands/PingCommand.java	
+@@ -0,0 +1,20 @@
++package com.alexis.javacordbot.commands;
++
++import com.alexis.javacordbot.util.Arguments;
++import com.alexis.javacordbot.util.Command;
++import org.javacord.api.event.message.MessageCreateEvent;
++import org.javacord.api.util.logging.ExceptionLogger;
++
++public class PingCommand extends Command {
++
++    public PingCommand() {
++        super("ping", "ping", "Sends a ping-pong message.");
++    }
++
++    @Override
++    public void execute(MessageCreateEvent event, Arguments args) {
++        event.getChannel()
++                .sendMessage("Pong!")
++                .exceptionally(ExceptionLogger.get());
++    }
++}
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n          </set>\r\n        </option>\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	
++++ b/.idea/gradle.xml	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_15\" default=\"true\" project-jdk-name=\"openjdk-15\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="true" project-jdk-name="openjdk-15" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="true" project-jdk-name="adopt-openjdk-15" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	
++++ b/.idea/vcs.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/alexis/javacordbot/commands/MuteCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/alexis/javacordbot/commands/MuteCommand.java b/src/main/java/com/alexis/javacordbot/commands/MuteCommand.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/alexis/javacordbot/commands/MuteCommand.java	
+@@ -0,0 +1,56 @@
++package com.alexis.javacordbot.commands;
++
++import com.alexis.javacordbot.Embeds;
++import com.alexis.javacordbot.util.Arguments;
++import com.alexis.javacordbot.util.Command;
++import org.javacord.api.entity.permission.PermissionType;
++import org.javacord.api.event.message.MessageCreateEvent;
++import org.javacord.api.util.logging.ExceptionLogger;
++
++public class MuteCommand extends Command {
++
++    public MuteCommand() {
++        super("mute", "mute <User> [Reason]", "Mutes a user for a reason.");
++    }
++
++    @Override
++    public void execute(MessageCreateEvent event, Arguments args) {
++        event.getServer().ifPresent(server -> event.getMessageAuthor().asUser().ifPresent(user -> {
++            if (!server.hasPermission(user, PermissionType.MOVE_MEMBERS)) {
++                event.getChannel()
++                        .sendMessage(Embeds.errorEmbed()
++                                .setTitle("Invalid Permissions")
++                                .setDescription("You require the **Move Members** permission."))
++                        .exceptionally(ExceptionLogger.get());
++                return;
++            }
++            if (args.size() > 1) {
++                args.getUser(event.getApi(), 1).ifPresent(mutedUser -> {
++                    server.addRoleToUser(mutedUser, server.getRolesByName("Muted").get(0)).exceptionally(ExceptionLogger.get());
++                    if (args.size() > 2) {
++                        event.getChannel()
++                                .sendMessage(Embeds.defaultEmbed()
++                                        .setTitle("User Muted")
++                                        .setDescription("**" + mutedUser.getDiscriminatedName() + "** was muted.")
++                                        .addField("Reason", args.getTrailing(2)))
++                                .exceptionally(ExceptionLogger.get());
++                    } else {
++                        event.getChannel()
++                                .sendMessage(Embeds.defaultEmbed()
++                                        .setTitle("User Muted")
++                                        .setDescription("**" + mutedUser.getDiscriminatedName() + "** was muted.")
++                                        .addField("Reason", "No Reason Provided."))
++                                .exceptionally(ExceptionLogger.get());
++                    }
++                });
++            } else {
++                event.getChannel()
++                        .sendMessage(Embeds.errorEmbed()
++                                .setTitle("Invalid Syntax")
++                                .setDescription("You need to specify a user."))
++                        .exceptionally(ExceptionLogger.get());
++            }
++        }));
++    }
++
++}
+Index: .gradle/buildOutputCleanup/cache.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Sun Jun 13 18:07:38 CEST 2021\r\ngradle.version=6.7\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+diff --git a/.gradle/buildOutputCleanup/cache.properties b/.gradle/buildOutputCleanup/cache.properties
+--- a/.gradle/buildOutputCleanup/cache.properties	
++++ b/.gradle/buildOutputCleanup/cache.properties	
+@@ -1,2 +1,2 @@
+-#Sun Jun 13 18:07:38 CEST 2021
+-gradle.version=6.7
++#Sun Jun 13 20:32:52 BST 2021
++gradle.version=6.8
+diff --git a/.gradle/6.8/gc.properties b/.gradle/6.8/gc.properties
+new file mode 100644

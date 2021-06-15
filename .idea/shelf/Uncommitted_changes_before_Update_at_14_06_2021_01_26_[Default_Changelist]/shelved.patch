@@ -1,0 +1,35 @@
+Index: build/tmp/compileJava/source-classes-mapping.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>fr/javabot/main/Main.java\r\n fr.javabot.main.Main\r\nfr/javabot/listener/CommandPing.java\r\n fr.javabot.listener.CommandPing\r\nfr/javabot/listener/CommandMute.java\r\n fr.javabot.listener.CommandMute\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build/tmp/compileJava/source-classes-mapping.txt b/build/tmp/compileJava/source-classes-mapping.txt
+--- a/build/tmp/compileJava/source-classes-mapping.txt	
++++ b/build/tmp/compileJava/source-classes-mapping.txt	
+@@ -1,6 +1,18 @@
+-fr/javabot/main/Main.java
+- fr.javabot.main.Main
+-fr/javabot/listener/CommandPing.java
+- fr.javabot.listener.CommandPing
+-fr/javabot/listener/CommandMute.java
+- fr.javabot.listener.CommandMute
++com/alexis/javacordbot/util/Command.java
++ com.alexis.javacordbot.util.Command
++com/alexis/javacordbot/util/Constants.java
++ com.alexis.javacordbot.util.Constants
++com/alexis/javacordbot/Main.java
++ com.alexis.javacordbot.Main
++com/alexis/javacordbot/commands/PingCommand.java
++ com.alexis.javacordbot.commands.PingCommand
++com/alexis/javacordbot/util/Arguments.java
++ com.alexis.javacordbot.util.Arguments
++com/alexis/javacordbot/Embeds.java
++ com.alexis.javacordbot.Embeds
++com/alexis/javacordbot/commands/MuteCommand.java
++ com.alexis.javacordbot.commands.MuteCommand
++com/alexis/javacordbot/commands/UnmuteCommand.java
++ com.alexis.javacordbot.commands.UnmuteCommand
++com/alexis/javacordbot/util/CommandHandler.java
++ com.alexis.javacordbot.util.CommandHandler
