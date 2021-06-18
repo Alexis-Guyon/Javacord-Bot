@@ -13,6 +13,8 @@ dependencies {
     implementation 'org.javacord:javacord:3.3.0'
     implementation 'org.slf4j:slf4j-api:1.7.30'
     implementation 'org.slf4j:slf4j-simple:1.7.30'
+    implementation 'com.zaxxer:HikariCP:4.0.3'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
     compile 'com.vdurmont:emoji-java:5.1.1'
 }
 

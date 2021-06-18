@@ -4,25 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74306925-6452-41db-b57c-0004c4ec7998" name="Default Changelist" comment="Intents">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/commands/BanCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/commands/BanlistCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/commands/HelpCommand.java" afterDir="false" />
+    <list default="true" id="74306925-6452-41db-b57c-0004c4ec7998" name="Default Changelist" comment="Some added commands">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/HikariCP_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/database/DBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/database/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/Embeds.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/Embeds.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/BanCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/BanCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/BanlistCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/BanlistCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/HelpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/HelpCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/MuteCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/MuteCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/PingCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/PingCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/UnmuteCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/commands/UnmuteCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/Arguments.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/Arguments.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/Command.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/CommandHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/CommandHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/alexis/javacordbot/util/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/util/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/util/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alexis/javacordbot/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,17 +57,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="untitled" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="untitled" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="untitled" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="Javacord-Bot" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -99,6 +101,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15429688" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.reader.mode" />
   </component>
@@ -110,15 +116,42 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradlew run --args &quot;ODUzNjY3MzgzMTcxNjEyNjcy.YMYttA.7SiNIrsCM5d6HrXy4hi3DHSI3KM&quot;" />
+      <command value="gradlew run --args &quot;TOKEN&quot;" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.untitled [run --args &quot;TOKEN&quot;]">
-    <configuration name="Javacord-Bot [run --args &quot;ODUzNjY3MzgzMTcxNjEyNjcy.YMYttA.7SiNIrsCM5d6HrXy4hi3DHSI3KM&quot;]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Run">
+    <configuration name="DBUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.alexis.javacordbot.database.DBUtil" />
+      <module name="Javacord-Bot.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.alexis.javacordbot.database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryObj" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.alexis.javacordbot.query.QueryObj" />
+      <module name="Javacord-Bot.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.alexis.javacordbot.query.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" value="--scan --stacktrace" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -126,7 +159,7 @@
           <list>
             <option value="run" />
             <option value="--args" />
-            <option value="&quot;ODUzNjY3MzgzMTcxNjEyNjcy.YMYttA.n2lqXMdnuJSXQbKqag9sAnu3aJo&quot;" />
+            <option value="&quot;&quot;" />
           </list>
         </option>
         <option name="vmOptions" value="" />
@@ -160,13 +193,17 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.Javacord-Bot [run --args &quot;ODUzNjY3MzgzMTcxNjEyNjcy.YMYttA.7SiNIrsCM5d6HrXy4hi3DHSI3KM&quot;]" />
+      <item itemvalue="Application.QueryObj" />
+      <item itemvalue="Application.DBUtil" />
+      <item itemvalue="Gradle.Run" />
       <item itemvalue="Gradle.untitled [run --args &quot;TOKEN&quot;]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Run" />
+        <item itemvalue="Application.DBUtil" />
+        <item itemvalue="Application.QueryObj" />
         <item itemvalue="Gradle.untitled [run --args &quot;TOKEN&quot;]" />
-        <item itemvalue="Gradle.Javacord-Bot [run --args &quot;ODUzNjY3MzgzMTcxNjEyNjcy.YMYttA.7SiNIrsCM5d6HrXy4hi3DHSI3KM&quot;]" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +223,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623626871124</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Some added commands">
+      <created>1623786493074</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623786493074</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Some added commands">
+      <created>1623786653212</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623786653212</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +255,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Intents" />
-    <option name="LAST_COMMIT_MESSAGE" value="Intents" />
+    <MESSAGE value="Some added commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some added commands" />
   </component>
 </project>
